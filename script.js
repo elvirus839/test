@@ -1,3 +1,7 @@
+// Mobile menu toggle - declare early for use in other functions
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -23,10 +27,6 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 });
-
-// Mobile menu toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
 
 menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
@@ -57,7 +57,9 @@ function animateCounter(element) {
             element.textContent = Math.floor(current).toLocaleString();
             requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = target.toLocaleString() + (element.parentElement.querySelector('.stat-label').textContent.includes('%') ? '' : '+');
+            const statLabel = element.parentElement.querySelector('.stat-label');
+            const suffix = statLabel.textContent.includes('%') ? '' : '+';
+            element.textContent = target.toLocaleString() + suffix;
         }
     };
 
@@ -156,6 +158,10 @@ window.addEventListener('scroll', () => {
 const hero = document.querySelector('.hero');
 let particles = [];
 
+// Constants for particle movement
+const PARTICLE_MOVEMENT_RANGE = 40;
+const PARTICLE_MOVEMENT_OFFSET = 20;
+
 hero.addEventListener('mousemove', (e) => {
     // Limit particle creation
     if (Math.random() > 0.9) {
@@ -185,6 +191,8 @@ hero.addEventListener('mousemove', (e) => {
 
 // Add particle animation keyframes
 const style = document.createElement('style');
+const randomX = Math.random() * PARTICLE_MOVEMENT_RANGE - PARTICLE_MOVEMENT_OFFSET;
+const randomY = Math.random() * PARTICLE_MOVEMENT_RANGE - PARTICLE_MOVEMENT_OFFSET;
 style.textContent = `
     @keyframes particleFade {
         from {
@@ -193,19 +201,10 @@ style.textContent = `
         }
         to {
             opacity: 0;
-            transform: translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px) scale(0);
+            transform: translate(${randomX}px, ${randomY}px) scale(0);
         }
     }
 `;
 document.head.appendChild(style);
-
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
 
 console.log('🚀 InnovateTech Landing Page Loaded Successfully!');
