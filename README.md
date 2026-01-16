@@ -21,6 +21,43 @@ A modern, creative, and fully responsive landing page built with HTML, CSS, and 
   - Email signup form
   - Comprehensive footer
 
+## Testing 🧪
+
+The project includes comprehensive tests for the webpage functionality.
+
+### Running Tests
+
+```bash
+# Install dependencies first
+npm install
+
+# Run all tests
+npm test
+
+# Run tests in watch mode (for development)
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Coverage
+
+The test suite includes:
+- **Navigation Tests**: Menu toggle, navigation links, scroll effects
+- **Form Tests**: Email validation, form submission, reset functionality
+- **Animation Tests**: Counter animations, intersection observer, scroll animations
+- **Structure Tests**: DOM elements, sections, hero components
+- **Integration Tests**: End-to-end page functionality
+
+### Test Files
+
+- `navigation.test.js` - Tests for navigation menu and scroll effects
+- `form.test.js` - Tests for contact form functionality
+- `animations.test.js` - Tests for counter and scroll animations
+- `structure.test.js` - Tests for page structure and components
+- `integration.test.js` - Integration tests for overall page functionality
+
 ## How to Run 🏃
 
 ### Option 1: Open Directly in Browser
