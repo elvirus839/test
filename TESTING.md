@@ -13,7 +13,31 @@ This document describes the test suite for the InnovateTech Landing Page. The te
 
 ## Test Structure
 
-### 1. Navigation Tests (`navigation.test.js`)
+### 1. Landing Page Tests (`landing-page.test.js`)
+
+Comprehensive unit tests for the landing page components and interactions.
+
+**Coverage:**
+- Hero section rendering and content
+- Hero title with gradient text
+- Hero subtitle and action buttons
+- Floating cards in hero visual
+- Smooth scrolling navigation
+- Mobile menu hamburger animation
+- Particle effect on hero section
+- Parallax scrolling effect
+- Page initialization
+- Interactive elements (buttons, feature cards)
+
+**Example Tests:**
+```javascript
+test('should render hero section with correct id', ...)
+test('should display hero title with gradient text', ...)
+test('hamburger spans should support transform animations', ...)
+test('particle should have correct styling properties', ...)
+```
+
+### 2. Navigation Tests (`navigation.test.js`)
 
 Tests the navigation menu and scroll-related functionality.
 
@@ -33,7 +57,7 @@ test('menu toggle should have three spans for hamburger icon', ...)
 test('should be able to toggle active class on nav menu', ...)
 ```
 
-### 2. Form Tests (`form.test.js`)
+### 3. Form Tests (`form.test.js`)
 
 Tests the contact form functionality.
 
@@ -53,7 +77,7 @@ test('should have email input field', ...)
 test('should have form validation attributes', ...)
 ```
 
-### 3. Animation Tests (`animations.test.js`)
+### 4. Animation Tests (`animations.test.js`)
 
 Tests animations and dynamic effects.
 
@@ -72,7 +96,7 @@ test('animateCounter should update element text content', ...)
 test('sections should be styled for animation', ...)
 ```
 
-### 4. Structure Tests (`structure.test.js`)
+### 5. Structure Tests (`structure.test.js`)
 
 Tests the overall page structure and DOM elements.
 
@@ -94,7 +118,7 @@ test('should have hero section', ...)
 test('should have feature cards', ...)
 ```
 
-### 5. Integration Tests (`integration.test.js`)
+### 6. Integration Tests (`integration.test.js`)
 
 Tests the integration of multiple components.
 
