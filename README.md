@@ -44,6 +44,7 @@ npm run test:coverage
 ### Test Coverage
 
 The test suite includes:
+- **Landing Page Tests**: Hero section, smooth scrolling, mobile menu, particle effects, parallax, interactive elements
 - **Navigation Tests**: Menu toggle, navigation links, scroll effects
 - **Form Tests**: Email validation, form submission, reset functionality
 - **Animation Tests**: Counter animations, intersection observer, scroll animations
@@ -52,6 +53,7 @@ The test suite includes:
 
 ### Test Files
 
+- `landing-page.test.js` - Comprehensive unit tests for landing page components and interactions
 - `navigation.test.js` - Tests for navigation menu and scroll effects
 - `form.test.js` - Tests for contact form functionality
 - `animations.test.js` - Tests for counter and scroll animations
